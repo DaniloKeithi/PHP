@@ -1,5 +1,5 @@
 <?php
-    header('Content-Type:application/json');
+    header('Content-type:application/json');
     include 'conexao.php';
 
     $metodo = $_SERVER['REQUEST_METHOD'];
@@ -11,7 +11,7 @@
 
 
     $path_parts = explode('/', $path);
-    echo json_encode($path_parts);
+    //echo json_encode($path_parts);
 
     $primeiraparte = isset($path_parts[0]) ? $path_parts[0] : ' '; 
     $segundaparte = isset($path_parts[1]) ? $path_parts[1] : ' '; 
@@ -88,8 +88,8 @@
     }
 
     function lista_um_aluno($quartaparte){
-
-        $stmt -> $conexao -> prepare("SELECT * FROM alunos WHERE id = ?");
+        global $conexao;
+        $stmt = $conexao -> prepare("SELECT * FROM alunos WHERE id = ?");
         $stmt -> bind_param('i',$quartaparte);
         $stmt -> execute();
         $resultado = $stmt->get_result();
@@ -97,11 +97,12 @@
 
         echo json_encode([
             'mensagem' => 'LISTA DE UM ALUNO',
-            'dados_aluno' => $quartaparte
+            'dados_aluno' => $alunos
         ]);
     }
 
     function lista_cursos(){
+        global $conexao;
         $stmt -> $conexao -> prepare("SELECT * FROM cursos WHERE id = ?");
         $stmt -> bind_param('i',$quartaparte);
         $stmt -> execute();
@@ -109,12 +110,14 @@
         $cursos = $resultado ->fetch_assoc();
         echo json_encode([
             'mensagem' => 'LISTA DE TODOS OS CURSOS',
+            'dados_cursos' => $cursos,
         ]);
     }
 
     function lista_um_curso($quartaparte){
         echo json_encode([
             'mensagem' => 'LISTA DE UM CURSO',
+            'dado_curso' => $cursos,
         ]);
     }
 
