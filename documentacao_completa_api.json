@@ -1,0 +1,276 @@
+{
+    "info": {
+        "_postman_id": "1fd8abf7-7d5a-40a3-81d2-8f78f9f81e90",
+        "name": "teste api",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "LISTA TODOS OS ALUNOS",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost/exercicio/api.php/alunos",
+                    "path": [
+                        "exercicio",
+                        "api.php",
+                        "alunos"
+                    ],
+                    "host": [
+                        "localhost"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "INSERE UM CURSO OPCAO 1 JSON",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "localhost/exercicio/api.php/cursos",
+                    "query": [
+                        {
+                            "key": "nome_curso",
+                            "value": "Jurídico",
+                            "disabled": true
+                        }
+                    ],
+                    "variable": [],
+                    "path": [
+                        "exercicio",
+                        "api.php",
+                        "cursos"
+                    ],
+                    "host": [
+                        "localhost"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"nome_curso\": \"TESTE\"\n}"
+                }
+            }
+        },
+        {
+            "name": "ATUALIZA UM ALUNO COM BASE NO ID",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "localhost/exercicio/api.php/alunos",
+                    "path": [
+                        "exercicio",
+                        "api.php",
+                        "alunos"
+                    ],
+                    "host": [
+                        "localhost"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"id\" : 1,\n  \"nome_novo\" : \"FULANO DA SILVA\",\n  \"email_novo\" : \"fulano@email.com\"\n}"
+                }
+            }
+        },
+        {
+            "name": "REMOVE UM ALUNO PELO ID",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "localhost/exercicio/api.php/alunos",
+                    "path": [
+                        "exercicio",
+                        "api.php",
+                        "alunos"
+                    ],
+                    "host": [
+                        "localhost"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"id\" : 3\n}"
+                }
+            }
+        },
+        {
+            "name": "LISTA TODOS OS CURSOS",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost/exercicio/api.php/cursos",
+                    "path": [
+                        "exercicio",
+                        "api.php",
+                        "cursos"
+                    ],
+                    "host": [
+                        "localhost"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "LISTA UM ALUNO POR ID",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost/exercicio/api.php/alunos/2",
+                    "path": [
+                        "exercicio",
+                        "api.php",
+                        "alunos",
+                        "2"
+                    ],
+                    "host": [
+                        "localhost"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "LISTA UM CURSO POR ID",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost/exercicio/api.php/cursos/2",
+                    "path": [
+                        "exercicio",
+                        "api.php",
+                        "cursos",
+                        "2"
+                    ],
+                    "host": [
+                        "localhost"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "INSERE UM CURSO OPCAO 2 PARAMETROS",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "localhost/exercicio/api.php/cursos?nome_curso=TESTE 2",
+                    "query": [
+                        {
+                            "key": "nome_curso",
+                            "value": "TESTE 2"
+                        }
+                    ],
+                    "variable": [],
+                    "path": [
+                        "exercicio",
+                        "api.php",
+                        "cursos"
+                    ],
+                    "host": [
+                        "localhost"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "INSERE UM ALUNO OPCAO 1 JSON",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "localhost/exercicio/api.php/alunos",
+                    "query": [
+                        {
+                            "key": "nome_curso",
+                            "value": "Jurídico",
+                            "disabled": true
+                        }
+                    ],
+                    "variable": [],
+                    "path": [
+                        "exercicio",
+                        "api.php",
+                        "alunos"
+                    ],
+                    "host": [
+                        "localhost"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"fk_cursos_id_curso\": 4,\n  \"nome\": \"FULANINHO\",\n  \"email\": \"fulaninho@email.com\"\n}"
+                }
+            }
+        },
+        {
+            "name": "ATUALIZA UM CURSO COM BASE NO ID",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "localhost/exercicio/api.php/cursos",
+                    "path": [
+                        "exercicio",
+                        "api.php",
+                        "cursos"
+                    ],
+                    "host": [
+                        "localhost"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"id_curso\" : 1,\n  \"nome_curso_novo\" : \"INFORMÁTICA PARA INTERNET\"\n}"
+                }
+            }
+        },
+        {
+            "name": "REMOVE UM CURSO PELO ID",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "localhost/exercicio/api.php/cursos",
+                    "path": [
+                        "exercicio",
+                        "api.php",
+                        "cursos"
+                    ],
+                    "host": [
+                        "localhost"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"id_curso\" : 6\n}"
+                }
+            }
+        }
+    ]
+}
